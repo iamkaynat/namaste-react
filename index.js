@@ -27,9 +27,13 @@ const Heading = () => (<h1 className="standard">Standard way of writing fucntion
 const root3 = ReactDOM.createRoot(document.getElementById("root3"));
 root3.render(<Heading />)
 
-const car = () => {
+const Car = () => {
     return <h1>Hello friends</h1>;
 }
 const root2 = ReactDOM.createRoot(document.getElementById("root2"));
-root2.render(<car />);
+root2.render(<Car />);
 
+const Applayout = () => {
+    return <h1>Hey I am a new component!</h1>
+}
+root3.render(<Applayout />);
