@@ -1,58 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-/*Header
-    -Logo
-    -nav items on right
-Body
-    -Search bar
-    -Restraunt Cards
-        -Restraunt container
-            -Image
-            -Name of Restaun, cusisines, start ratings, deleivery-time
-Footer
-    -copyright
-    -Address
-    -contact
- */
-const Header = () => {
-    return (
-        <div className="header">
-            <img className="logo" src="https://icon-library.com/images/food-app-icon/food-app-icon-9.jpg" alt="Logo" />
+import Header from './components/Header';
+import Body from './components/Body';
 
 
-            <nav className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Search</li>
-                    <li>Profile</li>
-                    <li>Cart</li>
-
-                </ul>
-            </nav>
-
-        </div>
-    );
-
-
-
-};
-const RestrauntCard = (props) => {
-    const { resData } = props;
-    const { name, cuisines, avgRating, costForTwo, deliveryTime } = resData?.data;
-    return (
-        <div className="res-card">
-            <img className="res-logo" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + resData.data.cloudinaryImageId} />
-            <h3>{name}</h3>
-            <h4>{cuisines.join(" , ")}</h4>
-            <h4> {avgRating} stars</h4>
-            <h4>Rs. {costForTwo / 100} FOR TWO</h4>
-            <h4>{deliveryTime} minutes</h4>
-
-        </div>
-
-    );
-};
 const resList = [
     {
         "type": "restaurant",
@@ -1642,25 +1593,7 @@ const resList = [
         "subtype": "basic"
     }
 ]
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search" >Search</div>
-            <div className="res-container" >
 
-                {
-                    resList.map(restraunt => <RestrauntCard key={resData.data.id} resData={restraunt} />)
-                }
-
-
-            </div>
-
-
-        </div>
-
-    );
-
-};
 
 const AppLayout = () => {
     return (
